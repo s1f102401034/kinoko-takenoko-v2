@@ -11,6 +11,7 @@ def top():
 
 @app.route('/vote', methods=['POST'])
 def answer():
+    print(request.form)
     kinoko_percent = kinoko_count/(kinoko_count+takenoko_count)*100
     takenoko_percent=takenoko_count/(kinoko_count+takenoko_count)
     return render_template('vote.html', **vars())
